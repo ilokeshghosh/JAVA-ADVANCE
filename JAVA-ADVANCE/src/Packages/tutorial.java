@@ -81,7 +81,7 @@ public class tutorial {
         buliding.name="Academic Building";
         buliding.color="white-blue";
         buliding.height=100;
-        buliding.usage="Class is taken in side me";
+        buliding.usage="Class is taken inside me";
         buliding.price=1000000000;
         buliding.species="Multi-Storey";
         buliding.id();

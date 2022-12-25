@@ -1,3 +1,4 @@
+package MultiThreading;
 public class test {
     public static void main(String[] args) {
         //Declare three Variables and initialise them with some valid values. One of type int, one of type byte and one of type

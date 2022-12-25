@@ -1,3 +1,4 @@
+package MultiThreading;
 class MyThreadRunnable1 implements Runnable{
     public void run(){
         int i=0;
