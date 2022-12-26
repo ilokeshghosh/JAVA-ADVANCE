@@ -23,5 +23,15 @@ public class ArrayListDemo {
         System.out.println(num);
 
 
+        List<Integer> newList = new ArrayList<>();
+        newList.add(56);
+        newList.add(33);
+        num.addAll(newList);
+        System.out.println(num);
+
+        num.set(1,1001);
+        System.out.println(num);
+        System.out.println(num.contains(33));
+
     }
 }
