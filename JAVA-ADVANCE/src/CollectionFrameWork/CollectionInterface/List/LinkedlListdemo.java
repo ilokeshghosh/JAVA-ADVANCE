@@ -1,22 +1,12 @@
 package CollectionFrameWork.CollectionInterface.List;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
-public class ArrayListDemo {
-    public static void main(String[] args){
-        ArrayList<String> student = new ArrayList<>();
-        student.add("Lokesh Ghosh");
-        student.add("Ram Ghosh");
-        student.add(1,"Rakesh Roy");
-        System.out.println(student);
-        System.out.println(student.get(1));
-        student.remove(1);
-        System.out.println(student);
-
-
-        List<Integer> num = new ArrayList<>();
+public class LinkedlListdemo {
+    public static void main(String[] args) {
+        List<Integer> num = new LinkedList<>();
         num.add(6);
         num.add(8);
         System.out.println(num);
@@ -24,7 +14,7 @@ public class ArrayListDemo {
         System.out.println(num);
 
 
-        List<Integer> newList = new ArrayList<>();
+        List<Integer> newList = new LinkedList<>();
         newList.add(56);
         newList.add(33);
         num.addAll(newList);
@@ -55,7 +45,6 @@ public class ArrayListDemo {
         while(it.hasNext()){
             System.out.println("iterator "+ it.next());
         }
-
 
     }
 }
