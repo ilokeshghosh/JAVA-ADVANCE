@@ -42,7 +42,7 @@ public class CollectionClassDemo {
 
 
 
-        
+
 
         System.out.println(s1.compareTo(s2));
 
