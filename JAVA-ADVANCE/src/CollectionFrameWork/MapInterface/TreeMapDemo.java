@@ -1,11 +1,11 @@
 package CollectionFrameWork.MapInterface;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
-public class HashMapDemo {
+public class TreeMapDemo {
     public static void main(String[] args) {
-        Map<String,Integer> number = new HashMap<>();
+        Map<String ,Integer> number = new TreeMap<>();
 
         //Putting values
         number.put("one",1);
@@ -14,7 +14,10 @@ public class HashMapDemo {
         number.put("four",4);
         number.put("five",5);
 
+        //Printing map as string
+        System.out.println(number);
 
+        number.remove("three");
         //checking whether specific key is there or not
         if(!number.containsKey("three")){
             number.put("three",399);
@@ -45,8 +48,7 @@ public class HashMapDemo {
             System.out.println(value);
         }
 
-        //Printing map as string
-        System.out.println(number);
+
 
 
         //Check whether specific value is present or not

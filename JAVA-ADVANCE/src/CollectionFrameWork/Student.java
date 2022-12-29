@@ -1,8 +1,9 @@
 package CollectionFrameWork;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student> {
     String name;
     int rollNo;
     public Student(String name, int rollNo){
@@ -29,5 +30,11 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(rollNo);
+    }
+
+
+    @Override
+    public int compareTo(Student that) {
+        return this.rollNo - that.rollNo;
     }
 }
