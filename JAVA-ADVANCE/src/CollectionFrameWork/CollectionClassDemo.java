@@ -54,7 +54,15 @@ public class CollectionClassDemo {
         Collections.sort(list1);
         System.out.println(list1);
 
+        //Comparable is used to compare of specific data types , it is not dynamic
+        //For comparing dynamically we use Comperator
 
-
+        Collections.sort(list1, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.name.compareTo(o2.name);
+            }
+        });
+        System.out.println(list1);
     }
 }
