@@ -91,6 +91,43 @@ public class notes {
             catch(Exception e2){//Catch Block}
             catch(Exception e3){//Catch Block}
 
+
+            ****finally****
+            Used to execute the important code of the program.
+
+            Syntax:
+
+            try{
+                //Protected Code
+               }
+
+
+               catch(Exception e1{
+               //catch Block
+               }
+               finally{
+
+               //This block is always executed
+
+               }
+
+
+               ****throw****
+               This is a keyword used to throw an exception
+
+               Syntax:
+
+               void a(){
+               throw new ArithmeticException("Incorrect");
+               }
+
+
+               ****throws****
+               Used to declare Exceptions
+
+               Systax:
+
+               void a()throws ArithmeticException{}
          */
     }
 }
