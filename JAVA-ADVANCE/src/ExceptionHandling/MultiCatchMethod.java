@@ -1,7 +1,10 @@
 package ExceptionHandling;
 
+import java.util.Scanner;
+
 public class MultiCatchMethod {
     public static void main(String[] args) {
+
         try{
             int[] x = new int[5];
             x[7]=10/0;

@@ -128,6 +128,30 @@ public class notes {
                Systax:
 
                void a()throws ArithmeticException{}
+
+
+                                #Difference between throw and throws#
+
+               throw                                            `   throws
+               1.Used to explicity throw an                        1.Used to declare an Exception
+                Exception
+               2.Checked Exceptions cannot                         2.Checked Exceptions can be propagated.
+                be propagated using throw only
+               3.Followed by an instance                           3.Followed by a class.
+               4. Cannot throw mulitple exceptions                 4.Used with a method Signature
+                                                                   5.Can declare multiple Exceptions.
+
+
+
+                                ## Difference Between Final vs Finally vs Finalize ##
+                 Final                                  Finally                 Finalize
+                 1.Keyword                              1.Block                 1.Method
+                 2.Applies restrictions on              2.Used to place an      2.Used to perform clean-up
+                 class, methods and variable.           important code          just before the object is
+                                                                                garbage collected.
+                 3.final class can't be inherited,      3.It will be executed
+                 method can't be overridden & the       whether the exception
+                 variable value can't be changed        is handled or not.
          */
     }
 }
