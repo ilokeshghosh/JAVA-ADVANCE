@@ -14,6 +14,9 @@ public class Throws {
         try {
             avg();
         }
+//        catch (ArithmeticException e){
+//            System.out.println("HIII");
+//        }
       finally {
             System.out.println("Caught");
         }

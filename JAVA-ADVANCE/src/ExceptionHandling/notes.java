@@ -76,7 +76,7 @@ public class notes {
 
             ****catch****
             # used to handle the exception.
-            # Multi-Catch methods
+            # Multi-Catch methods are also used
 
 
             try{//proctected code}
@@ -132,7 +132,7 @@ public class notes {
 
                                 #Difference between throw and throws#
 
-               throw                                            `   throws
+               throw                                              ` throws
                1.Used to explicity throw an                        1.Used to declare an Exception
                 Exception
                2.Checked Exceptions cannot                         2.Checked Exceptions can be propagated.
@@ -152,6 +152,10 @@ public class notes {
                  3.final class can't be inherited,      3.It will be executed
                  method can't be overridden & the       whether the exception
                  variable value can't be changed        is handled or not.
+
+                 # User-Defined Exception #
+                 1. user-defined exception must extends the exception class
+                 2. a exception is thrown using throw keyword
          */
     }
 }
