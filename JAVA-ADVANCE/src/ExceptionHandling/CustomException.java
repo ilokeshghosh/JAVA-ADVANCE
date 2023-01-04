@@ -27,7 +27,7 @@ public class CustomException {
 
 
 
-    class InvalidInputException extends Exception{
+    static class InvalidInputException extends Exception{
         InvalidInputException(String exceptionText){
             super(exceptionText);
         }
