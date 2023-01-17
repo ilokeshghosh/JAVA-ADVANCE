@@ -15,6 +15,9 @@ public class HashMapDemo {
         number.put("five",5);
 
 
+        System.out.println(number);
+
+
         //checking whether specific key is there or not
         if(!number.containsKey("three")){
             number.put("three",399);
