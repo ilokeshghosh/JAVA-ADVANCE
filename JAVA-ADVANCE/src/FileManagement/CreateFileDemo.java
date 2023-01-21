@@ -66,6 +66,7 @@ public class CreateFileDemo {
         File myFile = new File("lokesh.txt");
         if(myFile.delete()){
             System.out.println("i have deleted  : "+myFile.getName());
+            System.out.println("File deleted Successfully");
 
         }
         else {
