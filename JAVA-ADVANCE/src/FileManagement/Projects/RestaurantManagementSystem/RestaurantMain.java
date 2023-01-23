@@ -6,6 +6,22 @@ import java.util.*;
 
 //file path : C:\Users\acer\Desktop\GIT REPO\JAVA-ADVANCE\JAVA-ADVANCE\src\FileManagement\Projects\RestaurantManagementSystem\Files
 public class RestaurantMain {
+
+    /*
+    Issued Coupon
+
+    code        amount
+
+    lok20       100
+    xyz         120
+    abcd        150
+    ryzen5      200
+    gtx         250
+
+    nitro5      50
+
+
+     */
     public static void main(String[] args) throws Exception {
         Scanner sc= new Scanner(System.in); // For non-string input
         Scanner sc1= new Scanner(System.in); // For String Input
@@ -287,10 +303,12 @@ public class RestaurantMain {
 
                                         for(int i=0;i<list.size();i++){
                                             Restaurant e= (Restaurant)list.get(i);
-                                            System.out.println("\t"+e.fId+"\t\t\t\t\t\t\t\t\t\t"+e.fname+" \t\t\t\t\t\t\t\t\t\t\t\t\t"+e.price+"");
+//                                            System.out.println("\t "+e.fId+"\t\t\t\t\t\t\t\t\t\t\t"+e.fname+"\t\t\t\t\t\t\t\t\t\t"+e.price);
+                                            System.out.print(" \t "+e.fId+"\t\t\t\t\t\t\t\t"+e.fname+" \t\t\t\t \t \t\t\t\t\t\t\t "+e.price);
                                             System.out.println("\n|------------------------------------------------------------------------------------------------------------|");
                                         }
                                         System.out.print("\n\n\n");
+
                                     }
                                     else{
                                         System.out.print("\n-----------------------------------|\n");
@@ -416,19 +434,34 @@ public class RestaurantMain {
                         ois = new ObjectInputStream(new FileInputStream(file));
                         list=(ArrayList<Restaurant>)ois.readObject();
                         ois.close();
-                        System.out.println("-----------------------------");
-                        li= list.listIterator();
 
-                        while (li.hasNext()){
-                            System.out.println(li.next());
+                        System.out.print("------------------------------------------------------------------------------------------------------------\n");
+                        System.out.print("|----------------------------------------| RESTAURANT MENU |-------------------------------------------------|\n");
+                        System.out.print("-------------------------------------------------------------------------------------------------------------\n");
+                        System.out.print("|------------------------------------------------------------------------------------------------------------|\n");
+                        System.out.print("|  FOOD ID  |"+"\t\t\t\t\t\t\t\t"+"|  FOOD NAME  |"+"\t\t\t\t\t\t\t\t\t  "+"|  FOOD PRICE  |");
+                        System.out.print("\n|------------------------------------------------------------------------------------------------------------|\n");
 
+                        for(int i=0;i<list.size();i++){
+                            Restaurant e= (Restaurant)list.get(i);
+//                            System.out.println("\t"+e.fId+"\t\t\t\t\t\t\t\t\t\t"+e.fname+" \t\t\t\t\t\t\t\t\t\t\t\t\t"+e.price+"");
+                            System.out.print(" \t "+e.fId+"\t\t\t\t\t\t\t\t"+e.fname+" \t\t\t\t \t \t\t\t\t\t\t\t "+e.price);
+                            System.out.println("\n|------------------------------------------------------------------------------------------------------------|");
                         }
-                        System.out.println("-------------------------------");
+                        System.out.print("\n\n\n");
+
 
                         do {
-                            System.out.println("Enter the Id of Food You Want to Order");
+                            System.out.print("\n-----------------------------------------|\n");
+                            System.out.print("|");
+                            System.out.print("Enter the Id of Food You Want to Order");
+                            System.out.print("\n-----------------------------------------|\n");
+                            System.out.print("|");
+                            System.out.print("Enter Input : ");
                             int fId = sc.nextInt();
-//                            Restaurant e = list.indexOf();
+                            System.out.print("-----------------------------------------|\n\n\n");
+
+//
                             for(Restaurant e: list){
                                 if(e.fId==fId){
                                     Billing.order(e.fname, e.price);
@@ -443,7 +476,11 @@ public class RestaurantMain {
 
                     }
                     else{
-                        System.out.println("File Not Exist..............!");
+                        System.out.print("\n-----------------------------------|\n");
+                        System.out.print("|");
+                        System.out.print("File Not Exist......!!");
+                        System.out.print("\n-----------------------------------|\n\n\n");
+                        Thread.sleep(3000);
                     }
                     break;
 
