@@ -1,34 +1,42 @@
 package FileManagement.Projects.RestaurantManagementSystem;
-import java.util.*;
-public class Billing {
-    static ArrayList<Bill> list= new ArrayList<Bill>();
-    static String coupon ="A12Z";
-    static Scanner sc= new Scanner(System.in);
 
-    static void order(String fname, int amt){
+
+import java.util.*;
+import java.io.*;
+
+//path : C:\Users\acer\Desktop\GIT REPO\JAVA-ADVANCE\JAVA-ADVANCE\src\FileManagement\Projects\RestaurantManagementSystem\Files
+public class Billing {
+
+
+
+
+    static ArrayList<Bill>  list = new ArrayList<Bill>();
+    static String  coupon = "A12Z";
+    static Scanner sc = new Scanner(System.in);
+
+    static void order(String fname, int amt) {
         System.out.println("Enter the quantity for "+fname+" : ");
         int qty = sc.nextInt();
-
         list.add(new Bill(fname, qty, amt*qty));
-
     }
-    static void cont(){
+
+    static void cont() {
         System.out.println("Do you want to continue : y/n");
-        char ch= sc.next().charAt(0);
-        if((ch!='y')){
+        char ch = sc.next().charAt(0);
+        if((ch!='y')) {
             System.out.println();
-            System.out.println("Do you have coupon : y/n ");
-            char ch2= sc.next().charAt(0);
-            if(ch2=='y'){
+            System.out.println("Do you have coupon : y/n");
+            char ch2 = sc.next().charAt(0);
+            if(ch2=='y') {
                 sc.nextLine();
-                System.out.println("Enter you Coupon Code :");
-                String uCoupon= sc.nextLine();
-                if(uCoupon.equals(coupon)){
+                System.out.println("Enter you Coupon code :");
+                String uCoupon = sc.nextLine();
+                if(uCoupon.equals(coupon)) {
                     totalbill(120);
                     System.exit(0);
                 }
-                else{
-                    System.out.println("Invalid Coupon Code ");
+                else {
+                    System.out.println("Invalid Coupon Code");
                 }
             }
             else {
@@ -36,22 +44,25 @@ public class Billing {
                 System.exit(0);
             }
         }
+
+
     }
 
-    static void totalbill(int dis){
+    static void totalbill(int dis) {
         System.out.println();
         System.out.println("CHECKOUT");
         System.out.println("=======");
         System.out.println("ITEMS \tQUANTITY\t AMOUNT");
         System.out.println("=========");
 
-        double total=0;
+        double total=0.0;
 
-        for(Bill b:list){
+        for(Bill b: list) {
             System.out.println(b.fname+" \t"+b.qty+"\t₹"+b.amt);
             total = total+b.amt;
-        }
 
+
+        }
 
 
         try{
@@ -90,5 +101,20 @@ public class Billing {
             ex.printStackTrace();
         }
 
+
     }
-}
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,8 @@
 package FileManagement.Projects.RestaurantManagementSystem;
 
-public class Bill {
+import java.io.Serializable;
+
+public class Bill implements Serializable {
     String fname;
     int qty;
     double amt;
