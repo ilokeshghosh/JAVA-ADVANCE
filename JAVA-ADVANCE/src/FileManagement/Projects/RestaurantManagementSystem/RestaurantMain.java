@@ -150,6 +150,9 @@ public class RestaurantMain {
 //                            System.out.println("5)Issue Coupon");
 //                            System.out.println("0)Exit From System");
 //                            int op1=sc.nextInt();
+
+
+
                             switch (op1){
                                 case 0:
                                     System.out.print("\n-----------------------------------|\n");
@@ -166,7 +169,9 @@ public class RestaurantMain {
                                     System.out.print("|");
                                     System.out.print("Exited System");
                                     System.out.print("\n-----------------------------------|\n\n");
+
                                     System.exit(0);
+
                                 case 1:
 
                                     System.out.print("------------------------------------\n");

@@ -1,3 +1,5 @@
+package MultiThreading;
+
 public class Notes {
     /*
     Arguments are actual values like sum(2,5) here 2 and 5 are arguments
