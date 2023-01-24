@@ -15,7 +15,19 @@ public class Billing {
     static Scanner sc = new Scanner(System.in);
    static Scanner sc1= new Scanner(System.in); // For String Input
 
-    static ListIterator li=null;
+    static ListIterator<TotalSale> li=null;
+
+//    food name, count , sale
+
+
+    static ArrayList<TotalSale> TotalSaleList = new ArrayList<>();
+
+    static File TotalSaleFile = new File("C:\\Users\\acer\\Desktop\\GIT REPO\\JAVA-ADVANCE\\JAVA-ADVANCE\\src\\FileManagement\\Projects\\RestaurantManagementSystem\\Files\\bill.txt");
+
+
+    static ObjectOutputStream oos= null;
+    static ObjectInputStream ois = null;
+
 
 
 
@@ -30,8 +42,6 @@ public class Billing {
         System.out.print("-----------------------------------|\n\n\n");
 
 
-//        System.out.println("Enter the quantity for "+fname+" : ");
-//        int qty = sc.nextInt();
 
 
         list.add(new Bill(fname, qty, amt*qty));
@@ -48,8 +58,6 @@ public class Billing {
         System.out.print("-----------------------------------|\n\n\n");
 
 
-//        System.out.println("Do you want to continue : y/n");
-//        char ch = sc.next().charAt(0);
 
 
         if((ch!='y')) {
@@ -65,8 +73,6 @@ public class Billing {
             char ch2 = sc.next().charAt(0);
             System.out.print("-----------------------------------|\n\n\n");
 
-//            System.out.println("Do you have coupon : y/n");
-//            char ch2 = sc.next().charAt(0);
 
 
             if(ch2=='y') {
@@ -127,7 +133,17 @@ public class Billing {
 
     }
 
-    static void totalbill(int dis) {
+    static void totalbill(int dis) throws IOException, ClassNotFoundException {
+
+        if(TotalSaleFile.isFile()){
+            ois = new ObjectInputStream(new FileInputStream(TotalSaleFile));
+            TotalSaleList = (ArrayList<TotalSale>)ois.readObject();
+            ois.close();
+
+        }
+
+
+
         System.out.println();
 
         System.out.print("-------------------------------------------------------------------------------------------------------------\n");
@@ -138,13 +154,37 @@ public class Billing {
         System.out.print("\n|------------------------------------------------------------------------------------------------------------|\n");
 
 
-        double total=0.0;
+       int count=0;
+       double TotalAmount=0;
+       double total=0;
+        boolean found = false;
 
         for(Bill b: list) {
             System.out.println("| \t"+b.fname+"\t\t\t\t\t\t\t\t\t\t"+b.qty+" \t\t\t\t\t\t\t\t\t\t\t₹"+b.amt+"    \t \t | ");
             System.out.print("|------------------------------------------------------------------------------------------------------------|\n");
 
+            li= TotalSaleList.listIterator();
+
+            while (li.hasNext()){
+                TotalSale e=(TotalSale) li.next();
+                if(Objects.equals(b.fname, e.fName)){
+
+                    li.set(new TotalSale(e.fName, e.count+1, e.TotalAmount+b.amt));
+                    found = true;
+                }
+            }
+            if (found){
+                oos= new ObjectOutputStream(new FileOutputStream(TotalSaleFile));
+                oos.writeObject(TotalSaleList);
+                oos.close();
+            }
+
+
+
+
+
             total = total+b.amt;
+
 
 
         }
@@ -164,96 +204,49 @@ public class Billing {
             System.out.print("\n-----------------------------------|\n");
             System.out.print("|");
             System.out.print("Cooking Your Food");
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print("Done");
-            Thread.sleep(1000);
-
-            System.out.print("\n-----------------------------------|\n");
-            Thread.sleep(1000);
+//            for(int i=0;i<5;i++){
+//                System.out.print(".");
+//                Thread.sleep(1000);
+//            }
+//
+//            System.out.print("\n-----------------------------------|\n");
+//            Thread.sleep(1000);
 
 
             //Packing food
             System.out.print("\n-----------------------------------|\n");
             System.out.print("|");
             System.out.print("Packing your food");
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print("Done");
-            Thread.sleep(1000);
-
-            System.out.print("\n-----------------------------------|\n");
-            Thread.sleep(1000);
+//            for(int i=0;i<5;i++){
+//                System.out.print(".");
+//                Thread.sleep(1000);
+//            }
+//
+//            System.out.print("Done");
+//            Thread.sleep(1000);
+//
+//            System.out.print("\n-----------------------------------|\n");
+//            Thread.sleep(1000);
 
 
             //Making Bill
             System.out.print("\n-----------------------------------|\n");
             System.out.print("|");
             System.out.print("Making Bill");
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print("Done");
-            Thread.sleep(1000);
-
-            System.out.print("\n-----------------------------------|\n");
-            Thread.sleep(1000);
+//            for(int i=0;i<5;i++){
+//                System.out.print(".");
+//                Thread.sleep(1000);
+//            }
+//
+//            System.out.print("Done");
+//            Thread.sleep(1000);
+//
+//            System.out.print("\n-----------------------------------|\n");
+//            Thread.sleep(1000);
 
 
 
@@ -261,62 +254,32 @@ public class Billing {
             System.out.print("\n-----------------------------------|\n");
             System.out.print("|");
             System.out.print("Here is your order");
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-//            System.out.print("Done");
+//            for(int i=0;i<5;i++){
+//                System.out.print(".");
+//                Thread.sleep(1000);
+//            }
+//
+//
+//
+//            System.out.print("\n-----------------------------------|\n");
 //            Thread.sleep(1000);
-
-            System.out.print("\n-----------------------------------|\n");
-            Thread.sleep(1000);
-
+//
 
 
             //Here is you bill
             System.out.print("\n-----------------------------------|\n");
             System.out.print("|");
             System.out.print("Here is your bill");
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
 
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print(".");
-            Thread.sleep(1000);
-
-            System.out.print("\n-----------------------------------|\n");
-            Thread.sleep(1000);
+//            for(int i=0;i<5;i++){
+//                System.out.print(".");
+//                Thread.sleep(1000);
+//            }
+//
+//            System.out.print("\n-----------------------------------|\n");
+//            Thread.sleep(1000);
 
 
 
@@ -326,20 +289,6 @@ public class Billing {
             System.out.print("----------------------------------------\n\n\n");
 
 
-//            System.out.println();
-//            System.out.println("TOTAL BILL");
-//            System.out.println("=======");
-//            System.out.println("Amount Before Discount : ");
-//            System.out.println("Amount  ₹"+(total));
-//            total = total -dis;
-//            System.out.println("Amount After Discount : ");
-//            System.out.println("Amount  ₹"+(total));
-//            System.out.println("Discount Amount : ₹"+dis);
-//            double gst = total*0.05;
-//            System.out.println("GST : ₹"+gst );
-//            System.out.println("--------------");
-//            double famount = gst + total;
-//            System.out.println("Total : ₹"+famount);
 
             System.out.print("----------------------------------------\n");
             System.out.print("|-----------| TOTAL BILL |-------------|\n");
@@ -362,12 +311,12 @@ public class Billing {
             double famount = gst + total;
             System.out.print("|--------------------------------------|\n");
             System.out.print("| TOTAL\t\t\t\t\t\t:\t₹"+famount);
-            System.out.print("\n|--------------------------------------|\n");
+            System.out.print("\n|--------------------------------------|\n\n\n");
 
-
+            Menu.options();
         }
         catch(InterruptedException ex){
-            //  System.out.println("Hi Hello!");
+
             ex.printStackTrace();
         }
 
