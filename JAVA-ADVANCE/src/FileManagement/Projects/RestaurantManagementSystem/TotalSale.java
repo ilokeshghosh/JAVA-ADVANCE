@@ -11,6 +11,7 @@ public class TotalSale implements  Serializable {
     static File TotalSaleFile = new File("C:\\Users\\acer\\Desktop\\GIT REPO\\JAVA-ADVANCE\\JAVA-ADVANCE\\src\\FileManagement\\Projects\\RestaurantManagementSystem\\Files\\bill.txt");
 //    static ArrayList<TotalSale> TotalSaleList = new ArrayList<TotalSale>();
 
+
     static ObjectOutputStream oos= null;
     static ObjectInputStream ois = null;
 
