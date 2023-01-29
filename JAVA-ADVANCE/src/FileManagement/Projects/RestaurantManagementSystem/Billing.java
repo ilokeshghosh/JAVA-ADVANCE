@@ -15,12 +15,12 @@ public class Billing {
     static Scanner sc = new Scanner(System.in);
    static Scanner sc1= new Scanner(System.in); // For String Input
 
-    static ListIterator<TotalSale> li=null;
+
 
 //    food name, count , sale
 
 
-    static ArrayList<TotalSale> TotalSaleList = new ArrayList<>();
+
 
     static File TotalSaleFile = new File("C:\\Users\\acer\\Desktop\\GIT REPO\\JAVA-ADVANCE\\JAVA-ADVANCE\\src\\FileManagement\\Projects\\RestaurantManagementSystem\\Files\\bill.txt");
 
@@ -135,12 +135,7 @@ public class Billing {
 
     static void totalbill(int dis) throws IOException, ClassNotFoundException {
 
-        if(TotalSaleFile.isFile()){
-            ois = new ObjectInputStream(new FileInputStream(TotalSaleFile));
-            TotalSaleList = (ArrayList<TotalSale>)ois.readObject();
-            ois.close();
 
-        }
 
 
 
@@ -184,13 +179,13 @@ public class Billing {
             System.out.print("|");
             System.out.print("Cooking Your Food");
 
-//            for(int i=0;i<5;i++){
-//                System.out.print(".");
-//                Thread.sleep(1000);
-//            }
-//
-//            System.out.print("\n-----------------------------------|\n");
-//            Thread.sleep(1000);
+            for(int i=0;i<5;i++){
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+
+            System.out.print("\n-----------------------------------|\n");
+            Thread.sleep(1000);
 
 
             //Packing food
@@ -198,16 +193,16 @@ public class Billing {
             System.out.print("|");
             System.out.print("Packing your food");
 
-//            for(int i=0;i<5;i++){
-//                System.out.print(".");
-//                Thread.sleep(1000);
-//            }
-//
-//            System.out.print("Done");
-//            Thread.sleep(1000);
-//
-//            System.out.print("\n-----------------------------------|\n");
-//            Thread.sleep(1000);
+            for(int i=0;i<5;i++){
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+
+            System.out.print("Done");
+            Thread.sleep(1000);
+
+            System.out.print("\n-----------------------------------|\n");
+            Thread.sleep(1000);
 
 
             //Making Bill
@@ -216,16 +211,16 @@ public class Billing {
             System.out.print("Making Bill");
 
 
-//            for(int i=0;i<5;i++){
-//                System.out.print(".");
-//                Thread.sleep(1000);
-//            }
-//
-//            System.out.print("Done");
-//            Thread.sleep(1000);
-//
-//            System.out.print("\n-----------------------------------|\n");
-//            Thread.sleep(1000);
+            for(int i=0;i<5;i++){
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+
+            System.out.print("Done");
+            Thread.sleep(1000);
+
+            System.out.print("\n-----------------------------------|\n");
+            Thread.sleep(1000);
 
 
 
@@ -234,16 +229,16 @@ public class Billing {
             System.out.print("|");
             System.out.print("Here is your order");
 
-//            for(int i=0;i<5;i++){
-//                System.out.print(".");
-//                Thread.sleep(1000);
-//            }
-//
-//
-//
-//            System.out.print("\n-----------------------------------|\n");
-//            Thread.sleep(1000);
-//
+            for(int i=0;i<5;i++){
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+
+
+
+            System.out.print("\n-----------------------------------|\n");
+            Thread.sleep(1000);
+
 
 
             //Here is you bill
@@ -252,13 +247,13 @@ public class Billing {
             System.out.print("Here is your bill");
 
 
-//            for(int i=0;i<5;i++){
-//                System.out.print(".");
-//                Thread.sleep(1000);
-//            }
-//
-//            System.out.print("\n-----------------------------------|\n");
-//            Thread.sleep(1000);
+            for(int i=0;i<5;i++){
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+
+            System.out.print("\n-----------------------------------|\n");
+            Thread.sleep(1000);
 
 
 

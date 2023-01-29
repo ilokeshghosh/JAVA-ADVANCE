@@ -19,7 +19,7 @@ public class Admin {
    static File couponFile = new File("C:\\Users\\acer\\Desktop\\GIT REPO\\JAVA-ADVANCE\\JAVA-ADVANCE\\src\\FileManagement\\Projects\\RestaurantManagementSystem\\Files\\coupon.txt");
    static File file = new File("C:\\Users\\acer\\Desktop\\GIT REPO\\JAVA-ADVANCE\\JAVA-ADVANCE\\src\\FileManagement\\Projects\\RestaurantManagementSystem\\Files\\menu.txt");
 
-    static File SaleFile = new File("C:\\Users\\acer\\Desktop\\GIT REPO\\JAVA-ADVANCE\\JAVA-ADVANCE\\src\\FileManagement\\Projects\\RestaurantManagementSystem\\Files\\bill.txt");
+
 
     static HashMap<String , Integer> couponList = new HashMap<String, Integer>();
     static void auth() throws IOException, ClassNotFoundException, InterruptedException {
@@ -102,9 +102,6 @@ public class Admin {
                 System.out.print("7)Delete Coupon");
                 System.out.print("\n-----------------------------------|\n");
                 System.out.print("|");
-                System.out.print("8)Display Total Sale");
-                System.out.print("\n-----------------------------------|\n");
-                System.out.print("|");
                 System.out.print("0)LOG OUT");
                 System.out.print("\n-----------------------------------|\n");
                 System.out.print("|");
@@ -121,7 +118,6 @@ public class Admin {
                     case 5 -> IssueCoupon();
                     case 6 -> DisplayCoupon();
                     case 7 -> DeleteCoupon();
-                    case 8 -> TotalSale.DisplayTotalSale();
                     default -> {
                         System.out.print("\n-----------------------------------|\n");
                         System.out.print("|");
