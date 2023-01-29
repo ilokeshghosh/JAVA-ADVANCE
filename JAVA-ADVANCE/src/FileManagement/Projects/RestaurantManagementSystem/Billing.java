@@ -155,36 +155,15 @@ public class Billing {
 
 
        int count=0;
-       double TotalAmount=0;
+
        double total=0;
-        boolean found = false;
+
 
         for(Bill b: list) {
             System.out.println("| \t"+b.fname+"\t\t\t\t\t\t\t\t\t\t"+b.qty+" \t\t\t\t\t\t\t\t\t\t\t₹"+b.amt+"    \t \t | ");
             System.out.print("|------------------------------------------------------------------------------------------------------------|\n");
 
-            li= TotalSaleList.listIterator();
-
-            while (li.hasNext()){
-                TotalSale e=(TotalSale) li.next();
-                if(Objects.equals(b.fname, e.fName)){
-
-                    li.set(new TotalSale(e.fName, e.count+1, e.TotalAmount+b.amt));
-                    found = true;
-                }
-            }
-            if (found){
-                oos= new ObjectOutputStream(new FileOutputStream(TotalSaleFile));
-                oos.writeObject(TotalSaleList);
-                oos.close();
-            }
-
-
-
-
-
             total = total+b.amt;
-
 
 
         }
